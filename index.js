@@ -1,3 +1,5 @@
+const PORT = process.env.PORT || 3000;
+
 require("dotenv").config();
 const {
   Bot,
@@ -7,6 +9,14 @@ const {
   HttpError,
 } = require("grammy");
 const { getRandomQuestion, getCorrectAnswer } = require("./utils");
+
+const app = require("express")();
+app.get("/", (req, res) => {
+  res.send("Бот працює!");
+});
+app.listen(PORT, () => {
+  console.log(`Сервер запущено на порту ${PORT}`);
+});
 
 const bot = new Bot(process.env.BOT_API_KEY);
 
