@@ -18,6 +18,21 @@ app.listen(PORT, () => {
   console.log(`Сервер запущено на порту ${PORT}`);
 });
 
+function keepAlive() {
+  const url = process.env.RENDER_EXTERNAL_URL || "http://localhost:3000";
+  setInterval(() => {
+    fetch(url)
+      .then((res) => {
+        console.log(`Пінг відправлено. Статус: ${res.status}`);
+      })
+      .catch((err) => {
+        console.error("Помилка пінгу:", err.message);
+      });
+  }, 14 * 60 * 1000);
+}
+
+keepAlive();
+
 const bot = new Bot(process.env.BOT_API_KEY);
 
 bot.command("start", async (ctx) => {
