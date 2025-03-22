@@ -89,7 +89,7 @@ bot.on("callback_query:data", async (ctx) => {
   }
 
   if (callbackData.isCorrect) {
-    await ctx.reply("Правильно ✅");
+    await ctx.reply("Вірно! ✅");
     await ctx.answerCallbackQuery();
     return;
   }
