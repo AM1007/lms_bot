@@ -98,7 +98,7 @@ bot.on("callback_query:data", async (ctx) => {
     callbackData.type.split("-")[0],
     callbackData.questionId
   );
-  await ctx.reply(`Неправильно ❌ Правильна відповідь: ${answer}`);
+  await ctx.reply(`Невірно ❌ Вірна відповідь: ${answer}`);
   await ctx.answerCallbackQuery();
 });
 

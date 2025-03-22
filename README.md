@@ -15,6 +15,7 @@ This Telegram bot helps users prepare for frontend development interviews by pro
 
 - Node.js
 - [Grammy](https://grammy.dev/) - Telegram Bot Framework
+- [Express](https://expressjs.com/) - Web server for handling HTTP requests
 - [random-js](https://www.npmjs.com/package/random-js) - Random number generation
 - [dotenv](https://www.npmjs.com/package/dotenv) - Environment variable management
 
@@ -31,10 +32,13 @@ This Telegram bot helps users prepare for frontend development interviews by pro
 ├── index.js         # Main bot application
 ├── package.json     # Dependencies and scripts
 ├── questions.json   # Quiz questions database
-└── utils.js         # Helper functions
+├── utils.js         # Helper functions
+└── .env             # Environment variables (local development only)
 ```
 
 ## Installation and Setup
+
+### Local Development
 
 1. Clone the repository
 
@@ -55,10 +59,34 @@ This Telegram bot helps users prepare for frontend development interviews by pro
    BOT_API_KEY=your_telegram_bot_api_key
    ```
 
-4. Start the bot
+4. Start the bot for development
    ```
-   npm start
+   npm run dev
    ```
+
+### Deployment on Render.com
+
+1. Make sure your `package.json` has the correct scripts:
+
+   ```json
+   "scripts": {
+     "start": "node index.js",
+     "dev": "nodemon index.js"
+   }
+   ```
+
+2. Create a new Web Service on [Render.com](https://render.com/)
+
+   - Connect your GitHub repository
+   - Select the Node environment
+   - Set the build command: `npm install`
+   - Set the start command: `npm start`
+
+3. Add your environment variables:
+
+   - `BOT_API_KEY`: Your Telegram Bot API key
+
+4. Deploy your service and check the logs to ensure everything works correctly
 
 ## Usage
 
@@ -86,5 +114,11 @@ This project is licensed under the ISC License - see the `package.json` file for
 Andrew Motko
 
 ---
+
+## Deployment Status
+
+[![Render](https://img.shields.io/badge/Render-Deployed-success)](https://render.com)
+
+The bot is currently deployed on Render.com with an always-on web service to ensure prompt responses.
 
 Happy interviewing! 💻 🚀
