@@ -105,14 +105,6 @@ Contributions are welcome! You can help expand the question database or improve 
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## License
-
-This project is licensed under the ISC License - see the `package.json` file for details.
-
-## Author
-
-Andrew Motko
-
 ---
 
 ## Deployment Status
