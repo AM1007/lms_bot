@@ -1,0 +1,26 @@
+{
+  "name": "lms_bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AM1007/lms_bot.git"
+  },
+  "author": "Andrew Motko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AM1007/lms_bot/issues"
+  },
+  "homepage": "https://github.com/AM1007/lms_bot#readme",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "grammy": "^1.35.0",
+    "nodemon": "^3.1.9",
+    "random-js": "^2.1.0"
+  }
+}
